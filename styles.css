@@ -1216,3 +1216,120 @@ footer {
         opacity: 0;
     }
 }
+
+/* Omnichannel Section */
+.omnichannel {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #4b4b6e 100%);
+    color: #ffffff;
+}
+
+.omnichannel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.omnichannel-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.omnichannel-card:hover {
+    transform: translateY(-5px);
+}
+
+.omnichannel-card i {
+    font-size: 2.5rem;
+    color: #e94560;
+    margin-bottom: 1rem;
+}
+
+.omnichannel-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.channel-features,
+.intelligence-features,
+.security-features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.channel-features li,
+.intelligence-features li,
+.security-features li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.channel-features li i,
+.intelligence-features li i,
+.security-features li i {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    color: #e94560;
+}
+
+/* Updated Form Styles */
+.form-group.consent {
+    margin-top: 1rem;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+.checkbox-container input {
+    margin-right: 0.5rem;
+}
+
+.checkbox-container .checkmark {
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #e94560;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    position: relative;
+}
+
+.checkbox-container input:checked + .checkmark:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid #e94560;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+#preferred_channel {
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #4b4b6e;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+#preferred_channel option {
+    background: #1a1a2e;
+    color: #ffffff;
+}

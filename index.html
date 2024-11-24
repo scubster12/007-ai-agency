@@ -171,6 +171,47 @@
             </div>
         </section>
 
+        <section id="omnichannel" class="omnichannel">
+            <h2>Secure Omnichannel Communications</h2>
+            <div class="omnichannel-grid">
+                <div class="omnichannel-card">
+                    <i class="fas fa-sync"></i>
+                    <h3>Seamless Conversation Continuity</h3>
+                    <p>Pick up conversations exactly where they left off, regardless of channel. From email to chat, social to phone - your communication history follows you.</p>
+                    <ul class="channel-features">
+                        <li><i class="fas fa-envelope"></i> Email Integration</li>
+                        <li><i class="fas fa-comments"></i> Live Chat</li>
+                        <li><i class="fas fa-phone"></i> Voice Calls</li>
+                        <li><i class="fab fa-whatsapp"></i> WhatsApp</li>
+                        <li><i class="fab fa-facebook-messenger"></i> Messenger</li>
+                        <li><i class="fab fa-instagram"></i> Instagram DMs</li>
+                    </ul>
+                </div>
+                <div class="omnichannel-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI-Powered Context Awareness</h3>
+                    <p>Our AI agents maintain perfect memory of all interactions, ensuring consistent and personalized communication across every channel.</p>
+                    <ul class="intelligence-features">
+                        <li><i class="fas fa-history"></i> Complete Conversation History</li>
+                        <li><i class="fas fa-user-circle"></i> Customer Profile Integration</li>
+                        <li><i class="fas fa-lightbulb"></i> Smart Response Suggestions</li>
+                        <li><i class="fas fa-language"></i> Multi-Language Support</li>
+                    </ul>
+                </div>
+                <div class="omnichannel-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure Communications Protocol</h3>
+                    <p>Military-grade encryption and privacy controls ensure your conversations remain confidential across all channels.</p>
+                    <ul class="security-features">
+                        <li><i class="fas fa-lock"></i> End-to-End Encryption</li>
+                        <li><i class="fas fa-user-shield"></i> Privacy Controls</li>
+                        <li><i class="fas fa-file-contract"></i> Compliance Management</li>
+                        <li><i class="fas fa-key"></i> Secure Access Control</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <section id="clearance-levels" class="pricing">
             <h2>Security Clearance Levels</h2>
             <div class="pricing-grid">
@@ -222,7 +263,7 @@
         <section id="demo-form" class="demo-form">
             <h2>Request Intelligence Briefing</h2>
             <div class="form-container">
-                <form id="demoForm" class="demo-form">
+                <form id="demoForm" class="demo-form" action="https://formspree.io/f/xjkveejv" method="POST">
                     <div class="form-group">
                         <input type="text" id="name" name="name" required placeholder="Codename (Full Name)">
                     </div>
@@ -238,7 +279,24 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <select id="preferred_channel" name="preferred_channel" required>
+                            <option value="">Preferred Communication Channel</option>
+                            <option value="email">Email</option>
+                            <option value="whatsapp">WhatsApp</option>
+                            <option value="messenger">Facebook Messenger</option>
+                            <option value="phone">Phone</option>
+                            <option value="instagram">Instagram</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <textarea id="message" name="message" placeholder="Mission Objectives (How can we help?)"></textarea>
+                    </div>
+                    <div class="form-group consent">
+                        <label class="checkbox-container">
+                            <input type="checkbox" required name="consent">
+                            <span class="checkmark"></span>
+                            I authorize secure communication across all channels
+                        </label>
                     </div>
                     <button type="submit" class="btn">Submit for Clearance</button>
                 </form>
