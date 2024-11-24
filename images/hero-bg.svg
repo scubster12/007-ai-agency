@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Circuit pattern -->
+        <pattern id="circuitPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+            <path d="M10 10 H90 V90 H10 Z" fill="none" stroke="rgba(233, 69, 96, 0.1)" stroke-width="1"/>
+            <circle cx="10" cy="10" r="2" fill="rgba(233, 69, 96, 0.2)"/>
+            <circle cx="90" cy="90" r="2" fill="rgba(233, 69, 96, 0.2)"/>
+            <path d="M10 50 H40 M60 50 H90 M50 10 V40 M50 60 V90" stroke="rgba(233, 69, 96, 0.1)" stroke-width="1"/>
+        </pattern>
+        
+        <!-- Gradient overlay -->
+        <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:0.9" />
+            <stop offset="100%" style="stop-color:#4b4b6e;stop-opacity:0.9" />
+        </linearGradient>
+        
+        <!-- Glow effect -->
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    
+    <!-- Background with circuit pattern -->
+    <rect width="100%" height="100%" fill="url(#circuitPattern)"/>
+    
+    <!-- Gradient overlay -->
+    <rect width="100%" height="100%" fill="url(#heroGradient)"/>
+    
+    <!-- Abstract network connections -->
+    <g filter="url(#glow)">
+        <circle cx="200" cy="300" r="3" fill="#e94560"/>
+        <circle cx="600" cy="200" r="3" fill="#e94560"/>
+        <circle cx="1000" cy="400" r="3" fill="#e94560"/>
+        <circle cx="400" cy="600" r="3" fill="#e94560"/>
+        <circle cx="800" cy="500" r="3" fill="#e94560"/>
+        
+        <line x1="200" y1="300" x2="600" y2="200" stroke="#e94560" stroke-width="1" opacity="0.3"/>
+        <line x1="600" y1="200" x2="1000" y2="400" stroke="#e94560" stroke-width="1" opacity="0.3"/>
+        <line x1="400" y1="600" x2="800" y2="500" stroke="#e94560" stroke-width="1" opacity="0.3"/>
+        <line x1="200" y1="300" x2="400" y2="600" stroke="#e94560" stroke-width="1" opacity="0.3"/>
+        <line x1="600" y1="200" x2="800" y2="500" stroke="#e94560" stroke-width="1" opacity="0.3"/>
+    </g>
+    
+    <!-- Targeting elements -->
+    <g transform="translate(900,100)" opacity="0.5">
+        <circle cx="0" cy="0" r="20" stroke="#e94560" stroke-width="1" fill="none"/>
+        <line x1="-30" y1="0" x2="30" y2="0" stroke="#e94560" stroke-width="1"/>
+        <line x1="0" y1="-30" x2="0" y2="30" stroke="#e94560" stroke-width="1"/>
+    </g>
+</svg>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Preferences - 007 AI Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">007 AI</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="preferences-content">
+        <h1>Privacy Preferences</h1>
+        
+        <div class="preferences-section">
+            <h2>Communication Preferences</h2>
+            <form id="preferencesForm" class="preferences-form">
+                <div class="preference-group">
+                    <h3>Email Communications</h3>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="marketingEmails" name="marketingEmails">
+                        <label for="marketingEmails">Marketing and promotional emails</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="productUpdates" name="productUpdates">
+                        <label for="productUpdates">Product updates and announcements</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="securityAlerts" name="securityAlerts">
+                        <label for="securityAlerts">Security alerts and important notices</label>
+                    </div>
+                </div>
+
+                <div class="preference-group">
+                    <h3>Data Collection</h3>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="analyticsConsent" name="analyticsConsent">
+                        <label for="analyticsConsent">Allow analytics tracking to improve our service</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="personalization" name="personalization">
+                        <label for="personalization">Allow personalization of content and recommendations</label>
+                    </div>
+                </div>
+
+                <div class="preference-group">
+                    <h3>Cookie Management</h3>
+                    <div class="cookie-details">
+                        <div class="cookie-type">
+                            <div class="cookie-header">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="essentialCookies" name="essentialCookies" checked disabled>
+                                    <label for="essentialCookies">Essential Cookies</label>
+                                </div>
+                                <span class="cookie-info" data-tooltip="Required for basic website functionality">ℹ️</span>
+                            </div>
+                            <p class="cookie-description">These cookies are necessary for the website to function and cannot be switched off.</p>
+                        </div>
+
+                        <div class="cookie-type">
+                            <div class="cookie-header">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="analyticsCookies" name="analyticsCookies">
+                                    <label for="analyticsCookies">Analytics Cookies</label>
+                                </div>
+                                <span class="cookie-info" data-tooltip="Help us understand how visitors interact with our website">ℹ️</span>
+                            </div>
+                            <p class="cookie-description">These cookies allow us to count visits and traffic sources to measure and improve site performance.</p>
+                        </div>
+
+                        <div class="cookie-type">
+                            <div class="cookie-header">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="marketingCookies" name="marketingCookies">
+                                    <label for="marketingCookies">Marketing Cookies</label>
+                                </div>
+                                <span class="cookie-info" data-tooltip="Used for personalized marketing">ℹ️</span>
+                            </div>
+                            <p class="cookie-description">These cookies may be set by our advertising partners to build a profile of your interests.</p>
+                        </div>
+
+                        <div class="cookie-type">
+                            <div class="cookie-header">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="functionalCookies" name="functionalCookies">
+                                    <label for="functionalCookies">Functional Cookies</label>
+                                </div>
+                                <span class="cookie-info" data-tooltip="Enable advanced features and personalization">ℹ️</span>
+                            </div>
+                            <p class="cookie-description">These cookies enable personalized features and remember your preferences.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="preference-group">
+                    <h3>Data Encryption</h3>
+                    <div class="encryption-status">
+                        <div class="status-indicator">
+                            <span class="status-icon">🔒</span>
+                            <span class="status-text">Your data is encrypted using military-grade encryption</span>
+                        </div>
+                        <p class="encryption-info">We use AES-256 encryption to protect your sensitive information.</p>
+                    </div>
+                </div>
+
+                <div class="preference-group">
+                    <h3>Privacy Dashboard</h3>
+                    <div class="privacy-metrics">
+                        <div class="metric-card">
+                            <h4>Security Score</h4>
+                            <div class="security-score">
+                                <div class="score-bar">
+                                    <div class="score-fill" style="width: 85%"></div>
+                                </div>
+                                <span class="score-value">85%</span>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Data Access Log</h4>
+                            <ul class="access-log">
+                                <li>Last login: <span id="lastLogin">Loading...</span></li>
+                                <li>Data accessed: <span id="dataAccessed">Loading...</span></li>
+                                <li>Location: <span id="accessLocation">Loading...</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data-actions">
+                    <h3>Data Management</h3>
+                    <button type="button" class="action-button" id="exportData">Export My Data</button>
+                    <button type="button" class="action-button warning" id="deleteData">Request Data Deletion</button>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="save-button">Save Preferences</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="preferences-section">
+            <h2>Active Sessions</h2>
+            <div id="activeSessions" class="sessions-list">
+                <!-- Sessions will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="preferences-section">
+            <h2>Privacy Dashboard</h2>
+            <div class="privacy-stats">
+                <div class="stat-card">
+                    <h3>Data Access</h3>
+                    <p>Last accessed: <span id="lastAccess">Never</span></p>
+                </div>
+                <div class="stat-card">
+                    <h3>Consent Status</h3>
+                    <p>Last updated: <span id="lastConsent">Never</span></p>
+                </div>
+                <div class="stat-card">
+                    <h3>Data Requests</h3>
+                    <p>Pending: <span id="pendingRequests">0</span></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 007 AI Agency. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="preferences.js"></script>
+</body>
+</html>

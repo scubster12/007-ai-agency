@@ -1,0 +1,14 @@
+fastapi>=0.68.1
+uvicorn>=0.15.0
+requests>=2.26.0
+beautifulsoup4>=4.9.3
+psutil>=5.8.0
+csscompressor>=0.9.5
+cryptography>=3.4.7
+python-jose>=3.3.0
+passlib>=1.7.4
+python-multipart>=0.0.9
+pydantic>=1.6.2,<2.0.0
+bcrypt>=4.1.2
+python-dotenv>=1.0.1
+watchdog>=2.1.2

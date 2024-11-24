@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Sitemap
+Sitemap: https://www.007ai.agency/sitemap.xml
+
+# Additional rules for specific bots
+User-agent: GPTBot
+Disallow: /sensitive/
+Disallow: /classified/
+
+User-agent: ChatGPT-User
+Disallow: /sensitive/
+Disallow: /classified/
+
+User-agent: GoogleBot
+Allow: /
+Crawl-delay: 5
+
+User-agent: BingBot
+Allow: /
+Crawl-delay: 5

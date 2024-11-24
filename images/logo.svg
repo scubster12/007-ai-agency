@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .text { fill: #ffffff; font-family: 'Arial Black', sans-serif; font-size: 24px; }
+        .accent { fill: #e94560; }
+        .icon { fill: none; stroke: #e94560; stroke-width: 2; }
+    </style>
+    
+    <!-- Background shape -->
+    <rect x="0" y="0" width="200" height="60" fill="#1a1a2e" rx="5"/>
+    
+    <!-- 007 text -->
+    <text x="60" y="38" class="text">
+        <tspan class="accent">007</tspan>
+        <tspan x="120" y="38">AI</tspan>
+    </text>
+    
+    <!-- Spy icon -->
+    <circle cx="30" cy="30" r="15" class="icon"/>
+    <path d="M20 30 h20 M30 20 v20" class="icon"/>
+</svg>
