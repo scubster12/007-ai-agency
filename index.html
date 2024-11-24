@@ -279,7 +279,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <select id="preferred_channel" name="preferred_channel" required>
+                        <select id="preferred_channel" name="preferred_channel" required onchange="togglePhoneField()">
                             <option value="">Preferred Communication Channel</option>
                             <option value="email">Email</option>
                             <option value="whatsapp">WhatsApp</option>
@@ -287,6 +287,24 @@
                             <option value="phone">Phone</option>
                             <option value="instagram">Instagram</option>
                         </select>
+                    </div>
+                    <div class="form-group" id="phone_field" style="display: none;">
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" pattern="[0-9]{10,}" title="Please enter a valid phone number">
+                        <div class="contact-preference">
+                            <label>Contact Preference:</label>
+                            <div class="radio-group">
+                                <label class="radio-container">
+                                    <input type="radio" name="phone_preference" value="call" required>
+                                    <span class="radio-custom"></span>
+                                    Voice Call
+                                </label>
+                                <label class="radio-container">
+                                    <input type="radio" name="phone_preference" value="text" required>
+                                    <span class="radio-custom"></span>
+                                    Text Message
+                                </label>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <textarea id="message" name="message" placeholder="Mission Objectives (How can we help?)"></textarea>
@@ -353,6 +371,19 @@
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
             };
+        }
+    </script>
+    <script>
+        function togglePhoneField() {
+            const phoneField = document.getElementById('phone_field');
+            const selectedChannel = document.getElementById('preferred_channel').value;
+            if (selectedChannel === 'phone') {
+                phoneField.style.display = 'block';
+                document.getElementById('phone').required = true;
+            } else {
+                phoneField.style.display = 'none';
+                document.getElementById('phone').required = false;
+            }
         }
     </script>
 </body>

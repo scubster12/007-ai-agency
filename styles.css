@@ -579,6 +579,29 @@ footer {
     border-color: var(--accent-color);
 }
 
+#phone_field {
+    transition: all 0.3s ease;
+}
+
+#phone_field input[type="tel"] {
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #4b4b6e;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+#phone_field input[type="tel"]::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#phone_field input[type="tel"]:focus {
+    outline: none;
+    border-color: #e94560;
+}
+
 .demo-cta {
     display: block;
     width: 100%;
@@ -638,6 +661,75 @@ footer {
     color: rgba(255, 255, 255, 0.7);
     margin-top: 1rem;
     font-style: italic;
+}
+
+.contact-preference {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+}
+
+.contact-preference label {
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.radio-container:hover {
+    background: rgba(233, 69, 96, 0.1);
+    border-radius: 5px;
+}
+
+.radio-container input[type="radio"] {
+    display: none;
+}
+
+.radio-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #4b4b6e;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.radio-custom:after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #e94560;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.2s ease;
+}
+
+.radio-container input[type="radio"]:checked + .radio-custom {
+    border-color: #e94560;
+}
+
+.radio-container input[type="radio"]:checked + .radio-custom:after {
+    transform: translate(-50%, -50%) scale(1);
 }
 
 /* Legal Pages Styling */

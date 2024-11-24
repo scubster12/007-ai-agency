@@ -217,4 +217,37 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('header').insertBefore(navToggle, document.querySelector('nav'));
 
     initCookieConsent();
+
+    // Form handling
+    document.getElementById('demoForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const form = this;
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.innerHTML;
+        submitButton.innerHTML = 'Sending...';
+        
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            submitButton.innerHTML = 'Message Sent!';
+            form.reset();
+            setTimeout(() => {
+                submitButton.innerHTML = originalButtonText;
+            }, 3000);
+        })
+        .catch(error => {
+            submitButton.innerHTML = 'Error! Try Again';
+            console.error('Error:', error);
+            setTimeout(() => {
+                submitButton.innerHTML = originalButtonText;
+            }, 3000);
+        });
+    });
 });
