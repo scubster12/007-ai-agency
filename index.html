@@ -261,63 +261,30 @@
         </section>
 
         <section id="demo-form" class="demo-form">
-            <h2>Request Intelligence Briefing</h2>
-            <div class="form-container">
-                <form id="demoForm" class="demo-form" action="https://formspree.io/f/xjkveejv" method="POST">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" required placeholder="Codename (Full Name)">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" required placeholder="Secure Contact (Email)">
-                    </div>
-                    <div class="form-group">
-                        <select id="clearance" name="clearance" required>
-                            <option value="">Select Clearance Level</option>
-                            <option value="confidential">Confidential</option>
-                            <option value="secret">Secret</option>
-                            <option value="top-secret">Top Secret</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <select id="preferred_channel" name="preferred_channel" required onchange="togglePhoneField()">
-                            <option value="">Preferred Communication Channel</option>
-                            <option value="email">Email</option>
-                            <option value="whatsapp">WhatsApp</option>
-                            <option value="messenger">Facebook Messenger</option>
-                            <option value="phone">Phone</option>
-                            <option value="instagram">Instagram</option>
-                        </select>
-                    </div>
-                    <div class="form-group" id="phone_field" style="display: none;">
-                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" pattern="[0-9]{10,}" title="Please enter a valid phone number">
-                        <div class="contact-preference">
-                            <label>Contact Preference:</label>
-                            <div class="radio-group">
-                                <label class="radio-container">
-                                    <input type="radio" name="phone_preference" value="call" required>
-                                    <span class="radio-custom"></span>
-                                    Voice Call
-                                </label>
-                                <label class="radio-container">
-                                    <input type="radio" name="phone_preference" value="text" required>
-                                    <span class="radio-custom"></span>
-                                    Text Message
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Mission Objectives (How can we help?)"></textarea>
-                    </div>
-                    <div class="form-group consent">
-                        <label class="checkbox-container">
-                            <input type="checkbox" required name="consent">
-                            <span class="checkmark"></span>
-                            I authorize secure communication across all channels
-                        </label>
-                    </div>
-                    <button type="submit" class="btn">Submit for Clearance</button>
-                </form>
+            <div class="container">
+                <h2>Request Clearance</h2>
+                <p class="section-description">Ready to begin your mission? Submit your credentials for clearance.</p>
+                <div class="form-container">
+                    <iframe
+                        src="https://l.aiagentonboarding.com/widget/form/1AuYii2qu2x1bbRQTERv"
+                        style="width:100%;border:none;border-radius:8px;background:transparent;"
+                        id="ghl-form-1AuYii2qu2x1bbRQTERv" 
+                        data-layout="{'id':'INLINE'}"
+                        data-trigger-type="alwaysShow"
+                        data-trigger-value=""
+                        data-activation-type="alwaysActivated"
+                        data-activation-value=""
+                        data-deactivation-type="neverDeactivate"
+                        data-deactivation-value=""
+                        data-form-name="007 AI Agency Contact"
+                        data-height="700"
+                        data-layout-iframe-id="ghl-form-1AuYii2qu2x1bbRQTERv"
+                        data-form-id="1AuYii2qu2x1bbRQTERv"
+                        title="007 AI Agency Contact Form"
+                    >
+                    </iframe>
+                    <script src="https://l.aiagentonboarding.com/js/form_embed.js"></script>
+                </div>
             </div>
         </section>
 
