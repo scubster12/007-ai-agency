@@ -1,8 +1,9 @@
 :root {
-    --primary-color: #1a1a2e;
-    --secondary-color: #4b4b6e;
+    --primary-color: #8b0a1a;
+    --secondary-color: #660000;
     --accent-color: #ff3737;
     --text-color: #ffffff;
+    --background-color: #000000;
 }
 
 * {
@@ -57,7 +58,7 @@ nav ul li a:hover {
 
 .hero {
     padding: 8rem 0 4rem;
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, #8b0a1a 0%, #660000 100%);
     position: relative;
     overflow: hidden;
     min-height: 100vh;
@@ -1288,7 +1289,7 @@ footer {
 }
 
 .encryption-status {
-    background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+    background: linear-gradient(45deg, #1a1a2e, #4b4b6e);
     border-radius: 8px;
     padding: 20px;
     margin: 15px 0;
@@ -1426,7 +1427,7 @@ footer {
 /* Omnichannel Section */
 .omnichannel {
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, #1a1a2e 0%, #4b4b6e 100%);
+    background: linear-gradient(135deg, #8b0a1a 0%, #660000 100%);
     color: #ffffff;
 }
 
@@ -1452,7 +1453,7 @@ footer {
 
 .omnichannel-card i {
     font-size: 2.5rem;
-    color: #e94560;
+    color: #ff3737;
     margin-bottom: 1rem;
 }
 
@@ -1483,7 +1484,7 @@ footer {
 .security-features li i {
     font-size: 1rem;
     margin-right: 0.5rem;
-    color: #e94560;
+    color: #ff3737;
 }
 
 /* Updated Form Styles */
@@ -1507,7 +1508,7 @@ footer {
     width: 20px;
     height: 20px;
     background: rgba(255, 255, 255, 0.1);
-    border: 2px solid #e94560;
+    border: 2px solid #ff3737;
     border-radius: 4px;
     margin-right: 0.5rem;
     position: relative;
@@ -1520,7 +1521,7 @@ footer {
     top: 2px;
     width: 5px;
     height: 10px;
-    border: solid #e94560;
+    border: solid #ff3737;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
 }
@@ -1605,7 +1606,7 @@ footer {
 /* Form Section Styling */
 .demo-form {
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, #1a1a2e 0%, #4b4b6e 100%);
+    background: linear-gradient(135deg, #8b0a1a 0%, #660000 100%);
     color: #ffffff;
 }
 
@@ -1613,7 +1614,7 @@ footer {
     text-align: center;
     margin-bottom: 1rem;
     font-size: 2.5rem;
-    color: #e94560;
+    color: #ff3737;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -1681,4 +1682,29 @@ footer {
     .nav-links.active {
         display: flex;
     }
+}
+
+.mission-section {
+    background: linear-gradient(135deg, #660000 0%, #8b0a1a 100%);
+    padding: 6rem 0;
+}
+
+.mission-card {
+    background: linear-gradient(135deg, #8b0a1a 0%, #660000 100%);
+    border: 1px solid rgba(233, 69, 96, 0.2);
+}
+
+.ai-workforce {
+    background: linear-gradient(135deg, #660000 0%, #8b0a1a 100%);
+    padding: 6rem 0;
+}
+
+.pricing-section {
+    background: linear-gradient(135deg, #8b0a1a 0%, #660000 100%);
+    padding: 6rem 0;
+}
+
+.contact-section {
+    background: linear-gradient(135deg, #660000 0%, #8b0a1a 100%);
+    padding: 6rem 0;
 }
