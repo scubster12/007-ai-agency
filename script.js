@@ -218,6 +218,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initCookieConsent();
 
+    // Google Maps Initialization
+    function initMap() {
+        const officeLocation = { lat: 37.7749, lng: -122.4194 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center: officeLocation,
+            styles: [
+                {
+                    "featureType": "all",
+                    "elementType": "geometry",
+                    "stylers": [{"color": "#1a0505"}]
+                },
+                {
+                    "featureType": "all",
+                    "elementType": "labels.text.fill",
+                    "stylers": [{"color": "#ffffff"}]
+                },
+                {
+                    "featureType": "all",
+                    "elementType": "labels.text.stroke",
+                    "stylers": [{"color": "#000000"}]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "geometry",
+                    "stylers": [{"color": "#e94560"}]
+                }
+            ]
+        });
+
+        const marker = new google.maps.Marker({
+            position: officeLocation,
+            map: map,
+            title: "007 AI Agency LLC",
+            icon: {
+                path: google.maps.SymbolPath.CIRCLE,
+                scale: 10,
+                fillColor: "#e94560",
+                fillOpacity: 1,
+                strokeColor: "#ffffff",
+                strokeWeight: 2
+            }
+        });
+
+        // Info Window
+        const contentString = `
+            <div class="map-info-window">
+                <h3>007 AI Agency LLC</h3>
+                <p>1234 AI Boulevard<br>San Francisco, CA 94105</p>
+                <p><a href="tel:+15550070007">+1 (555) 007-0007</a></p>
+            </div>
+        `;
+
+        const infoWindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        marker.addListener("click", () => {
+            infoWindow.open(map, marker);
+        });
+    }
+
     // Form handling
     document.getElementById('demoForm').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -249,5 +311,110 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitButton.innerHTML = originalButtonText;
             }, 3000);
         });
+    });
+
+    // Form Validation and Enhancement
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('#contact-form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Basic form validation
+                const name = form.querySelector('#name').value;
+                const email = form.querySelector('#email').value;
+                const message = form.querySelector('#message').value;
+                
+                if (!name || !email || !message) {
+                    showError('All fields are required');
+                    return;
+                }
+                
+                if (!isValidEmail(email)) {
+                    showError('Please enter a valid email address');
+                    return;
+                }
+                
+                // If validation passes, submit the form
+                submitForm(form);
+            });
+        }
+    });
+
+    function isValidEmail(email) {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+
+    function showError(message) {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.textContent = message;
+        
+        const form = document.querySelector('#contact-form');
+        form.insertBefore(errorDiv, form.firstChild);
+        
+        setTimeout(() => {
+            errorDiv.remove();
+        }, 3000);
+    }
+
+    async function submitForm(form) {
+        try {
+            const formData = new FormData(form);
+            const response = await fetch('https://api.007ai.agency/submit-form', {
+                method: 'POST',
+                body: formData
+            });
+            
+            if (response.ok) {
+                showSuccess('Thank you for your message. We will contact you shortly.');
+                form.reset();
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            showError('There was an error submitting the form. Please try again.');
+        }
+    }
+
+    function showSuccess(message) {
+        const successDiv = document.createElement('div');
+        successDiv.className = 'success-message';
+        successDiv.textContent = message;
+        
+        const form = document.querySelector('#contact-form');
+        form.insertBefore(successDiv, form.firstChild);
+        
+        setTimeout(() => {
+            successDiv.remove();
+        }, 5000);
+    }
+
+    // Add smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach((element) => {
+        observer.observe(element);
     });
 });
