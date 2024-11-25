@@ -56,155 +56,179 @@ nav ul li a:hover {
 }
 
 .hero {
-    min-height: 100vh;
+    padding: 8rem 0 4rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     position: relative;
-    display: flex;
-    align-items: center;
     overflow: hidden;
 }
 
-.hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('images/hero-bg.svg');
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    font-family: 'Orbitron', sans-serif;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    padding: 0 5%;
+.classified {
+    color: var(--accent-color);
+    font-family: 'Orbitron', sans-serif;
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.mission-brief {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.security-clearance {
+    display: flex;
+    gap: 2rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.capabilities {
+    padding: 4rem 0;
+    background: var(--secondary-color);
+}
+
+.capabilities h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent-color);
+}
+
+.capability-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.capability-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.capability-card:hover {
+    transform: translateY(-5px);
+}
+
+.capability-card i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.capability-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.capability-card p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.clearance-form {
+    padding: 4rem 0;
+    background: var(--primary-color);
+}
+
+.clearance-form h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent-color);
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+#ghl-form-1AuYii2qu2x1bbRQTERv {
+    min-height: 700px;
+}
+
+footer {
+    background: var(--secondary-color);
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-info {
+    display: flex;
     gap: 2rem;
 }
 
-.hero-text {
-    flex: 1;
-    max-width: 600px;
-}
-
-.hero-text h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 3.5rem;
-    color: var(--accent-color);
-    margin-bottom: 1rem;
-    animation: fadeInUp 1s ease;
-}
-
-.hero-text h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    animation: fadeInUp 1s ease 0.2s backwards;
-}
-
-.hero-text p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    animation: fadeInUp 1s ease 0.4s backwards;
-}
-
-.hero-cta {
+.encryption-status {
     display: flex;
-    gap: 1rem;
-    animation: fadeInUp 1s ease 0.6s backwards;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: var(--accent-color);
-    color: var(--text-color);
-    text-decoration: none;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.cta-button.secondary {
-    background-color: transparent;
-    border: 2px solid var(--accent-color);
-}
-
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(233, 69, 96, 0.2);
-}
-
-.hero-visual {
-    flex: 1;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    animation: fadeIn 1s ease 0.8s backwards;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
 }
 
-.targeting-reticle {
-    position: relative;
-    width: 200px;
-    height: 200px;
+.footer-legal {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
 }
 
-.reticle-ring {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100px;
-    height: 100px;
-    border: 2px solid var(--accent-color);
-    border-radius: 50%;
-    animation: rotate 10s linear infinite;
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .capability-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-info {
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
 
-.reticle-lines {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 120px;
-    height: 120px;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.reticle-lines::before,
-.reticle-lines::after {
-    content: '';
-    position: absolute;
-    background-color: var(--accent-color);
-}
-
-.reticle-lines::before {
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    transform: translateY(-50%);
-}
-
-.reticle-lines::after {
-    top: 0;
-    left: 50%;
-    width: 2px;
-    height: 100%;
-    transform: translateX(-50%);
-}
-
-.pulse-ring {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100px;
-    height: 100px;
-    border: 2px solid var(--accent-color);
-    border-radius: 50%;
-    animation: pulse 2s ease-out infinite;
+.hero h1,
+.mission-brief,
+.security-clearance {
+    animation: fadeIn 1s ease-out forwards;
 }
 
 .services {
