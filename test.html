@@ -8,7 +8,7 @@
         body {
             background-color: #1a0505;
             color: white;
-            font-family: 'Roboto', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
         }
@@ -29,11 +29,16 @@
         <h1>GHL Form Test</h1>
         
         <!-- GHL Form Integration -->
-        <iframe
-            src="https://forms.app.gohighlevel.com/v2/forms/1AuYii2qu2x1bbRQTERv"
-            style="width:100%;height:700px;border:none;border-radius:8px;background:transparent;"
-            frameborder="0"
-        ></iframe>
+        <div id="form-container">
+            <script src="https://widgets.gohighlevel.com/v2/forms.js"></script>
+            <div 
+                class="ghl-form-wrapper" 
+                data-form-id="1AuYii2qu2x1bbRQTERv"
+                data-location-id="Z9p6AAl3iGRb8vbAV3Tl"
+                data-theme="dark"
+                style="width:100%;height:700px;"
+            ></div>
+        </div>
     </div>
 
     <!-- GHL Chat Widget -->

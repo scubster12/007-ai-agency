@@ -261,38 +261,14 @@
                     <div class="contact-form">
                         <h2>Request Intelligence Briefing</h2>
                         <!-- GHL Form Integration -->
-                        <iframe
-                            src="https://forms.app.gohighlevel.com/v2/forms/1AuYii2qu2x1bbRQTERv"
-                            style="width:100%;border:none;border-radius:8px;background:transparent;"
-                            id="ghl-form-1AuYii2qu2x1bbRQTERv"
-                            data-layout="{'id':'INLINE'}"
-                            data-location-id="Z9p6AAl3iGRb8vbAV3Tl"
-                            data-form-name="007 AI Agency Intelligence Briefing"
-                            data-height="700"
-                            data-layout-iframe-id="ghl-form-1AuYii2qu2x1bbRQTERv"
+                        <script src="https://widgets.gohighlevel.com/v2/forms.js"></script>
+                        <div 
+                            class="ghl-form-wrapper" 
                             data-form-id="1AuYii2qu2x1bbRQTERv"
+                            data-location-id="Z9p6AAl3iGRb8vbAV3Tl"
                             data-theme="dark"
-                            data-custom-css="true"
-                            title="Request Intelligence Briefing"
-                        >
-                        </iframe>
-                        <script>
-                            window.addEventListener('message', function(event) {
-                                if (event.data.type === 'ghl_form_loaded') {
-                                    const formFrame = document.getElementById('ghl-form-1AuYii2qu2x1bbRQTERv');
-                                    if (formFrame && formFrame.contentWindow) {
-                                        const customStyles = document.querySelector('style[data-ghl-form-styles]');
-                                        if (customStyles) {
-                                            formFrame.contentWindow.postMessage({
-                                                type: 'ghl_set_custom_styles',
-                                                styles: customStyles.textContent
-                                            }, '*');
-                                        }
-                                    }
-                                }
-                            });
-                        </script>
-                        <script src="https://forms.app.gohighlevel.com/v2/forms/embed.js"></script>
+                            style="width:100%;height:700px;"
+                        ></div>
                     </div>
                     <div class="contact-info">
                         <div class="map-container">
@@ -355,7 +331,7 @@
                 var s = d.createElement('script');
                 s.type = 'text/javascript';
                 s.async = true;
-                s.src = 'https://messenger.app.gohighlevel.com/widget/messenger.js';
+                s.src = 'https://widgets.gohighlevel.com/v2/messenger.js';
                 var x = d.getElementsByTagName('script')[0];
                 x.parentNode.insertBefore(s, x);
             }
