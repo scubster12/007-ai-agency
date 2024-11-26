@@ -1876,3 +1876,167 @@ footer {
         height: 300px;
     }
 }
+
+/* GHL Form Custom Styling */
+iframe#ghl-form-1AuYii2qu2x1bbRQTERv {
+    background: transparent !important;
+}
+
+/* Custom CSS to inject into GHL form */
+<style>
+.formBuilder {
+    background: rgba(26, 5, 5, 0.95) !important;
+    color: #ffffff !important;
+}
+
+.formBuilder-wrapper {
+    background: transparent !important;
+}
+
+/* Form inputs */
+.formBuilder input[type="text"],
+.formBuilder input[type="email"],
+.formBuilder input[type="tel"],
+.formBuilder input[type="number"],
+.formBuilder textarea,
+.formBuilder select {
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(233, 69, 96, 0.2) !important;
+    color: #ffffff !important;
+    border-radius: 4px !important;
+    padding: 12px !important;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+/* Input focus state */
+.formBuilder input:focus,
+.formBuilder textarea:focus,
+.formBuilder select:focus {
+    border-color: #e94560 !important;
+    box-shadow: 0 0 10px rgba(233, 69, 96, 0.2) !important;
+    outline: none !important;
+}
+
+/* Labels */
+.formBuilder label {
+    color: #ffffff !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 500 !important;
+}
+
+/* Submit button */
+.formBuilder button[type="submit"],
+.formBuilder .submit-button {
+    background: #e94560 !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 12px 24px !important;
+    border-radius: 4px !important;
+    font-family: 'Orbitron', sans-serif !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+/* Button hover state */
+.formBuilder button[type="submit"]:hover,
+.formBuilder .submit-button:hover {
+    background: #d13651 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(233, 69, 96, 0.3) !important;
+}
+
+/* Radio and checkbox inputs */
+.formBuilder input[type="radio"],
+.formBuilder input[type="checkbox"] {
+    accent-color: #e94560 !important;
+}
+
+/* Radio and checkbox labels */
+.formBuilder .radio-label,
+.formBuilder .checkbox-label {
+    color: #ffffff !important;
+}
+
+/* Error messages */
+.formBuilder .error-message {
+    color: #e94560 !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 0.9em !important;
+    margin-top: 4px !important;
+}
+
+/* Success messages */
+.formBuilder .success-message {
+    color: #4CAF50 !important;
+    background: rgba(76, 175, 80, 0.1) !important;
+    border: 1px solid rgba(76, 175, 80, 0.2) !important;
+    padding: 12px !important;
+    border-radius: 4px !important;
+    margin-top: 16px !important;
+}
+
+/* Form sections */
+.formBuilder .form-section {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(233, 69, 96, 0.2) !important;
+    border-radius: 8px !important;
+    padding: 24px !important;
+    margin-bottom: 24px !important;
+}
+
+/* Section headings */
+.formBuilder .section-heading {
+    color: #e94560 !important;
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 1.5em !important;
+    margin-bottom: 16px !important;
+}
+
+/* Progress bar */
+.formBuilder .progress-bar {
+    background: rgba(233, 69, 96, 0.2) !important;
+}
+
+.formBuilder .progress-bar-fill {
+    background: #e94560 !important;
+}
+
+/* Required field asterisk */
+.formBuilder .required-asterisk {
+    color: #e94560 !important;
+}
+
+/* Placeholder text */
+.formBuilder input::placeholder,
+.formBuilder textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Dropdown options */
+.formBuilder select option {
+    background: #1a0505 !important;
+    color: #ffffff !important;
+}
+
+/* Form grid layout */
+.formBuilder .form-row {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    gap: 16px !important;
+    margin-bottom: 16px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .formBuilder .form-row {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .formBuilder button[type="submit"],
+    .formBuilder .submit-button {
+        width: 100% !important;
+    }
+}
+</style>
