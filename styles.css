@@ -1542,19 +1542,89 @@ footer {
 }
 
 /* GHL Form Styling */
-.form-container {
-    max-width: 800px;
-    margin: 0 auto;
+.ghl-form-wrapper {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    border: 1px solid rgba(233, 69, 96, 0.2);
     padding: 2rem;
-    background: rgba(26, 26, 46, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
 }
 
-#ghl-form-1AuYii2qu2x1bbRQTERv {
-    min-height: 700px;
-    transition: all 0.3s ease;
+/* Override GHL default styles */
+.ghl-form-wrapper input,
+.ghl-form-wrapper textarea,
+.ghl-form-wrapper select {
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(233, 69, 96, 0.2) !important;
+    color: var(--text-color) !important;
+    border-radius: 4px !important;
+    padding: 0.8rem !important;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.ghl-form-wrapper input:focus,
+.ghl-form-wrapper textarea:focus,
+.ghl-form-wrapper select:focus {
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 10px rgba(233, 69, 96, 0.2) !important;
+}
+
+.ghl-form-wrapper button {
+    background: var(--accent-color) !important;
+    color: var(--text-color) !important;
+    border: none !important;
+    padding: 0.8rem 2rem !important;
+    border-radius: 4px !important;
+    font-family: 'Orbitron', sans-serif !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition: all 0.3s ease !important;
+}
+
+.ghl-form-wrapper button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(233, 69, 96, 0.3) !important;
+}
+
+.ghl-form-wrapper label {
+    color: var(--text-color) !important;
+    font-family: 'Roboto', sans-serif !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* GHL Chat Widget Styling */
+#ghl-chat-widget {
+    border: 2px solid var(--accent-color) !important;
+    box-shadow: 0 5px 15px rgba(233, 69, 96, 0.3) !important;
+}
+
+#ghl-chat-widget .chat-header {
+    background: linear-gradient(135deg, #1a0505 0%, #2d0808 100%) !important;
+    border-bottom: 2px solid var(--accent-color) !important;
+}
+
+#ghl-chat-widget .chat-message-agent {
+    background: rgba(233, 69, 96, 0.1) !important;
+    border: 1px solid rgba(233, 69, 96, 0.2) !important;
+}
+
+#ghl-chat-widget .chat-input {
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(233, 69, 96, 0.2) !important;
+}
+
+/* GHL Calendar Styling */
+.ghl-calendar-wrapper {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(233, 69, 96, 0.2) !important;
+    border-radius: 8px !important;
+}
+
+.ghl-calendar-day.selected {
+    background: var(--accent-color) !important;
+}
+
+.ghl-calendar-time-slot:hover {
+    background: rgba(233, 69, 96, 0.1) !important;
 }
 
 /* GHL Form Button Customization */

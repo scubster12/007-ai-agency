@@ -87,6 +87,30 @@
     
     <!-- Google Maps API -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap"></script>
+    
+    <!-- GHL Integration -->
+    <script>
+        window.GHL_ACCOUNT_URL = 'app.gohighlevel.com';
+        window.GHL_LOCATION_ID = 'Z9p6AAl3iGRb8vbAV3Tl';
+        window.GHL_CALENDAR_ID = 'Z9p6AAl3iGRb8vbAV3Tl';
+    </script>
+    <script src="https://widgets.gohighlevel.com/js/widget.js" defer></script>
+    <!-- GHL Conversion Tracking -->
+    <script>
+        window.addEventListener('message', function(event) {
+            if (event.data.type === 'form_submitted') {
+                if (typeof window.GHL !== 'undefined') {
+                    window.GHL.trackConversion({
+                        locationId: 'Z9p6AAl3iGRb8vbAV3Tl',
+                        formId: event.data.formId,
+                        value: 1,
+                        currency: 'USD',
+                        accountUrl: 'app.gohighlevel.com'
+                    });
+                }
+            }
+        });
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -236,25 +260,16 @@
                 <div class="contact-grid">
                     <div class="contact-form">
                         <h2>Request Intelligence Briefing</h2>
-                        <iframe
-                            src="https://l.aiagentonboarding.com/widget/form/1AuYii2qu2x1bbRQTERv"
-                            style="width:100%;border:none;border-radius:8px;"
-                            id="ghl-form-1AuYii2qu2x1bbRQTERv"
-                            data-layout="{'id':'INLINE'}"
-                            data-trigger-type="alwaysShow"
-                            data-trigger-value=""
-                            data-activation-type="alwaysActivated"
-                            data-activation-value=""
-                            data-deactivation-type="neverDeactivate"
-                            data-deactivation-value=""
-                            data-form-name="007 AI Agency Intelligence Briefing"
-                            data-height="700"
-                            data-layout-iframe-id="ghl-form-1AuYii2qu2x1bbRQTERv"
+                        <!-- GHL Form Integration -->
+                        <div 
+                            class="ghl-form-wrapper" 
                             data-form-id="1AuYii2qu2x1bbRQTERv"
-                            title="Request Intelligence Briefing"
-                        >
-                        </iframe>
-                        <script src="https://l.aiagentonboarding.com/js/form_embed.js"></script>
+                            data-location-id="Z9p6AAl3iGRb8vbAV3Tl"
+                            data-account-url="app.gohighlevel.com"
+                            data-theme="dark"
+                            data-layout="inline"
+                            style="width:100%;height:700px;"
+                        ></div>
                     </div>
                     <div class="contact-info">
                         <div class="map-container">
@@ -309,6 +324,22 @@
             </div>
         </div>
     </footer>
+
+    <!-- GHL Chat Widget -->
+    <script>
+        window.GHL_CHAT = {
+            locationId: 'Z9p6AAl3iGRb8vbAV3Tl',
+            accountUrl: 'app.gohighlevel.com',
+            theme: 'dark',
+            position: 'bottom-right',
+            customColors: {
+                primary: '#e94560',
+                secondary: '#1a0505',
+                text: '#ffffff'
+            }
+        };
+    </script>
+    <script src="https://chat.gohighlevel.com/js/widget.js" defer></script>
 
     <script src="script.js"></script>
 </body>
