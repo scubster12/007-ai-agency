@@ -1,10 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Test Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHL Form Test</title>
+    <style>
+        body {
+            background-color: #1a0505;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #e94560;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Test Page</h1>
-    <p>If you can see this, the server is working!</p>
+    <div class="container">
+        <h1>GHL Form Test</h1>
+        
+        <!-- GHL Form Integration -->
+        <iframe
+            src="https://forms.app.gohighlevel.com/v2/forms/1AuYii2qu2x1bbRQTERv"
+            style="width:100%;height:700px;border:none;border-radius:8px;background:transparent;"
+            frameborder="0"
+        ></iframe>
+    </div>
+
+    <!-- GHL Chat Widget -->
+    <script>
+        (function(d, w) {
+            function l() {
+                var s = d.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = 'https://messenger.app.gohighlevel.com/widget/messenger.js';
+                var x = d.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+            }
+            if (typeof w.GHL !== "undefined") {
+                l();
+            } else {
+                w.GHL = { loader: l };
+            }
+        })(document, window);
+
+        window.GHL = window.GHL || {};
+        window.GHL.messenger = {
+            locationId: 'Z9p6AAl3iGRb8vbAV3Tl',
+            theme: 'dark',
+            styles: {
+                backgroundColor: '#1a0505',
+                buttonColor: '#e94560',
+                textColor: '#ffffff',
+                buttonTextColor: '#ffffff'
+            }
+        };
+    </script>
 </body>
 </html>

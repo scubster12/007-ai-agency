@@ -28,11 +28,17 @@ RELOAD_SCRIPT = """
 </body>
 """
 
-class AutoReloadHandler(http.server.SimpleHTTPRequestHandler):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, directory=DIRECTORY, **kwargs)
+class CORSRequestHandler(http.server.SimpleHTTPRequestHandler):
+    def end_headers(self):
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'GET')
+        self.send_header('Cache-Control', 'no-store, no-cache, must-revalidate')
+        return super().end_headers()
 
     def do_GET(self):
+        # Serve index.html for root path
+        if self.path == '/':
+            self.path = '/index.html'
         super().do_GET()
         if self.path.endswith('.html'):
             content = self.wfile.getvalue().decode('utf-8')
@@ -40,7 +46,7 @@ class AutoReloadHandler(http.server.SimpleHTTPRequestHandler):
             self.wfile = type(self.wfile)(modified_content.encode('utf-8'))
 
 def start_server():
-    with socketserver.TCPServer(("", PORT), AutoReloadHandler) as httpd:
+    with socketserver.TCPServer(("", PORT), CORSRequestHandler) as httpd:
         print(f"Serving at http://localhost:{PORT}")
         try:
             httpd.serve_forever()
