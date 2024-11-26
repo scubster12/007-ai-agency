@@ -259,14 +259,25 @@
             <div class="container">
                 <div class="contact-grid">
                     <div class="contact-form">
-                        <h2>Request Intelligence Briefing</h2>
-                        <!-- GHL Form Integration -->
-                        <iframe 
-                            src="https://l.aiagentonboarding.com/widget/form/XHDhzW9B7QaX6y67W773"
-                            style="width: 100%; height: 700px; border: none; background: transparent;"
-                            frameborder="0"
-                            allowfullscreen
-                        ></iframe>
+                        <h2>Request Top-Secret Intelligence Briefing</h2>
+                        <p class="classified-text">Clearance Level: Need to Know</p>
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <i class="fas fa-shield-alt"></i>
+                                <h3>Secure Line</h3>
+                                <p>+1 (888) AI-AGENT</p>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fas fa-envelope-secret"></i>
+                                <h3>Encrypted Channel</h3>
+                                <p>intelligence@007ai.agency</p>
+                            </div>
+                        </div>
+                        <button class="cta-button classified-button" id="openForm">
+                            <i class="fas fa-fingerprint"></i>
+                            Request Security Clearance
+                        </button>
+                        <p class="security-notice">Your transmission will be encrypted. Expect contact within 24 hours.</p>
                     </div>
                     <div class="contact-info">
                         <div class="map-container">
@@ -354,5 +365,156 @@
     </script>
 
     <script src="script.js"></script>
+    <script src="https://l.aiagentonboarding.com/js/form_embed.js"></script>
+    <iframe
+        src="https://l.aiagentonboarding.com/widget/form/XHDhzW9B7QaX6y67W773"
+        style="display:none;width:100%;height:100%;border:none;border-radius:4px"
+        id="popup-XHDhzW9B7QaX6y67W773" 
+        data-layout="{'id':'POPUP'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="Form 0"
+        data-height="439"
+        data-layout-iframe-id="popup-XHDhzW9B7QaX6y67W773"
+        data-form-id="XHDhzW9B7QaX6y67W773"
+        title="Form 0"
+    ></iframe>
+    <script>
+        document.getElementById('openForm').addEventListener('click', function() {
+            document.getElementById('popup-XHDhzW9B7QaX6y67W773').style.display = 'block';
+        });
+    </script>
+    <style>
+        .contact-section {
+            background-color: #1a0505;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(233, 69, 96, 0.05) 0%, rgba(26, 5, 5, 0.9) 100%);
+            z-index: 1;
+        }
+
+        .contact-grid {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-form {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            box-shadow: 0 0 20px rgba(233, 69, 96, 0.1);
+        }
+
+        .contact-form h2 {
+            color: #e94560;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .classified-text {
+            color: #e94560;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            margin: 20px 0;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+        }
+
+        .contact-method {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .contact-method i {
+            color: #e94560;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .contact-method h3 {
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .contact-method p {
+            color: #e94560;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        .classified-button {
+            background: linear-gradient(45deg, #1a0505, #e94560);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto;
+            transition: all 0.3s ease;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .classified-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.3);
+        }
+
+        .classified-button:active {
+            transform: translateY(1px);
+        }
+
+        .classified-button i {
+            margin-right: 10px;
+        }
+
+        .security-notice {
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            font-size: 12px;
+            font-family: 'Courier New', monospace;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-methods {
+                flex-direction: column;
+            }
+            
+            .contact-method {
+                margin: 10px 0;
+            }
+        }
+    </style>
 </body>
 </html>
