@@ -22,24 +22,145 @@
             text-align: center;
             margin-bottom: 30px;
         }
+        #loading {
+            text-align: center;
+            margin: 20px 0;
+            color: #e94560;
+        }
+        #debug-info {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 8px;
+            font-family: monospace;
+        }
+        .status {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .success {
+            background: rgba(76, 175, 80, 0.2);
+            color: #4CAF50;
+        }
+        .error {
+            background: rgba(233, 69, 96, 0.2);
+            color: #e94560;
+        }
+        .note {
+            text-align: center;
+            color: #e94560;
+            margin: 20px 0;
+            padding: 10px;
+            background: rgba(233, 69, 96, 0.1);
+            border-radius: 4px;
+        }
+        .form-container {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>GHL Form Test</h1>
+        <h1>Form Test</h1>
         
+        <div id="loading">Loading form...</div>
+        
+        <p class="note">Testing alternative embed method...</p>
+
         <!-- GHL Form Integration -->
+        <div class="form-container">
+            <iframe 
+                src="https://l.aiagentonboarding.com/widget/form/XHDhzW9B7QaX6y67W773"
+                style="width: 100%; height: 700px; border: none; background: transparent;"
+                frameborder="0"
+                allowfullscreen
+            ></iframe>
+        </div>
+
+        <!-- Alternative div-based embed -->
         <div id="form-container">
-            <script src="https://widgets.gohighlevel.com/v2/forms.js"></script>
+            <script src="https://forms.highlevel.com/form-sdk.js"></script>
             <div 
                 class="ghl-form-wrapper" 
-                data-form-id="1AuYii2qu2x1bbRQTERv"
+                data-form-id="inline-XHDhzW9B7QaX6y67W773"
                 data-location-id="Z9p6AAl3iGRb8vbAV3Tl"
-                data-theme="dark"
-                style="width:100%;height:700px;"
             ></div>
         </div>
+
+        <div id="debug-info">
+            <h3>Debug Information:</h3>
+            <div id="form-status"></div>
+            <div id="script-status"></div>
+        </div>
     </div>
+
+    <script>
+        // Debug information
+        const debugInfo = {
+            formLoaded: false,
+            scriptLoaded: false,
+            errors: []
+        };
+
+        function updateDebugInfo() {
+            const formStatus = document.getElementById('form-status');
+            const scriptStatus = document.getElementById('script-status');
+            const loading = document.getElementById('loading');
+
+            if (debugInfo.scriptLoaded) {
+                scriptStatus.innerHTML = '<div class="status success">✓ GHL Script loaded successfully</div>';
+            } else {
+                scriptStatus.innerHTML = '<div class="status error">✗ GHL Script not loaded</div>';
+            }
+
+            if (debugInfo.formLoaded) {
+                formStatus.innerHTML = '<div class="status success">✓ Form loaded successfully</div>';
+                loading.style.display = 'none';
+            } else {
+                formStatus.innerHTML = '<div class="status error">✗ Form not loaded yet</div>';
+                if (debugInfo.errors.length > 0) {
+                    formStatus.innerHTML += '<div class="status error">Errors:<br>' + 
+                        debugInfo.errors.join('<br>') + '</div>';
+                }
+            }
+        }
+
+        // Load GHL script
+        const script = document.createElement('script');
+        script.src = 'https://widgets.gohighlevel.com/v2/forms.js';
+        script.onload = function() {
+            debugInfo.scriptLoaded = true;
+            updateDebugInfo();
+        };
+        script.onerror = function() {
+            debugInfo.errors.push('Failed to load GHL script');
+            updateDebugInfo();
+        };
+        document.head.appendChild(script);
+
+        // Check form loading
+        window.addEventListener('message', function(event) {
+            if (event.data.type === 'ghl_form_loaded') {
+                debugInfo.formLoaded = true;
+                updateDebugInfo();
+            }
+        });
+
+        // Initial debug info update
+        updateDebugInfo();
+    </script>
+
+    <!-- Console logging -->
+    <script>
+        console.log('Page loaded');
+        window.addEventListener('message', function(event) {
+            console.log('Received message:', event.data);
+        });
+    </script>
 
     <!-- GHL Chat Widget -->
     <script>
